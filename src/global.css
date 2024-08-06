@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* stop touch scroll page refresh on mobile */
+    overscroll-behavior: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background-image: repeating-linear-gradient(
+        45deg,
+        #553c9a 0 5vh,
+        #b393d3 5vh 10vh
+    );
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    animation: barberpole 60s linear infinite;
+    user-select: none;
+}
+
+@keyframes barberpole {
+	0% {
+		background-position: 0% 0%
+	}
+	50% {
+		background-position: 100% 0%
+	}
+	100% {
+		background-position: 0% 0%
+	}
+}

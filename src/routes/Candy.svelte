@@ -1,7 +1,7 @@
 <script lang="ts">
     import { draggable } from "$lib/dnd";
 
-    let src = "/candy.png";
+    let src = "./candy.png";
 
     export let startX = 0;
     export let startY = 0;

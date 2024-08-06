@@ -1,7 +1,6 @@
 <script lang="ts">
     import { candiesEaten } from "./store";
     import { droppable } from "$lib/dnd";
-    let src = '/cat-closed.png';
 
     function dropelement(e: CustomEvent) {
         let elem: HTMLElement = e.detail;
@@ -35,10 +34,4 @@
     img:global(.droppable-hovering) {
         content: url("/cat-open.png");
     }
-
-    /* @media (max-aspect-ratio: 1/1) {
-        img {
-            height: 60vh;
-        }
-    } */
 </style>

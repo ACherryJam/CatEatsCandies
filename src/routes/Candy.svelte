@@ -1,7 +1,9 @@
 <script lang="ts">
     import { draggable } from "$lib/dnd";
+    import { base } from "$app/paths";
 
-    let src = "./candy.png";
+    const src = "/candy.png";
+    $: _src = `${base}${src}`;
 
     export let startX = 0;
     export let startY = 0;
@@ -15,7 +17,7 @@
 <svelte:options accessors={true}/>
 <div use:draggable={{initLeft: _left, initTop: _top}} bind:this={element}>
     <img 
-        {src}
+        src={_src}
         alt="Candy" 
         draggable="false"
     />

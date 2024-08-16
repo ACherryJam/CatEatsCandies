@@ -1,8 +1,11 @@
 <script lang="ts">
     import Candy from './Candy.svelte';
     import { start_dragging } from '$lib/dnd';
+	import { base } from '$app/paths';
 
-    const src = "./candybag.png";
+    const src = "/candybag.png";
+    $: _src = `${base}${src}`;
+
     let element: HTMLElement;
 
     let pointers: Set<number> = new Set();
@@ -32,7 +35,7 @@
 />
 
 <img 
-    {src}
+    src={_src}
     bind:this={element}
     class="candybag"
     alt="Candy Bag" 

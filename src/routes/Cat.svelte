@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { onMount } from "svelte";
     import { droppable } from "$lib/dnd";
-    import { getRandomInt } from "$lib/utils";
+    import { base } from "$app/paths";
     import { candiesEaten } from "./store";
 
     let audio: any;
@@ -12,26 +11,26 @@
         $candiesEaten++;
 
          // 5% chance to play a sound
-        if (Math.random() < 0.05) {
+        if (Math.random() < 0.9) {
             const r = Math.random();
 
-            let src = "/audio/";
+            let src = `${base}/audio/`;
             if (r < 0.5) {
                 // 50% chance to purr
-                src += `purr${getRandomInt(1, 4)}.mp3`;
+                src += `purr${Math.randint(1, 4)}.mp3`;
             } else if (r < 0.9) {
                 // 40% chance to meow
-                src += `meow${getRandomInt(1, 3)}.mp3`
+                src += `meow${Math.randint(1, 3)}.mp3`
             } else {
                 // 10% chance for a looong purr
                 src += "purrUnique1.mp3";
             }
 
-            playAudio(src);
+            playAudio(src, 0.1);
         }
     }
 
-    function playAudio(src: string, volume: number = 0.05) {
+    function playAudio(src: string, volume: number) {
         if (audio && audio.duration > 0 && !audio.paused) audio.pause();
 
         audio = new Audio(src);

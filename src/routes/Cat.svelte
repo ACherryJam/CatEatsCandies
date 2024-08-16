@@ -12,6 +12,7 @@
 <img 
     alt="Cat"
     draggable="false"
+    style:--growth={$candiesEaten}
 
     on:dropelement={dropelement}
     use:droppable
@@ -24,9 +25,15 @@
     }
 
     img {
+        --start-size: 70vmin;
+        --max-growth: 20vmin;
+
         user-select: none;
         content: url("/cat-closed.png");
-        max-height: 70vmin;
+        max-height: min(
+            calc(var(--start-size) + 0.01vmin * var(--growth)), /* current height */
+            calc(var(--start-size) + var(--max-growth)) /* max height */
+        );
         height: auto;
         width: auto;
     }

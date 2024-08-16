@@ -5,9 +5,6 @@
     import { candiesEaten } from "./store";
 
     let audio: any;
-    onMount(() => {
-        audio;
-    });
 
     function dropelement(e: CustomEvent) {
         let elem: HTMLElement = e.detail;

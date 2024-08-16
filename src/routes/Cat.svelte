@@ -10,8 +10,8 @@
         elem.remove();
         $candiesEaten++;
 
-         // 5% chance to play a sound
-        if (Math.random() < 0.9) {
+        // 5% chance to play a sound
+        if (Math.random() < 0.05) {
             const r = Math.random();
 
             let src = `${base}/audio/`;
